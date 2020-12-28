@@ -31,7 +31,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        centerTitle: true,
+        title: Text(widget.title, textAlign: TextAlign.center,),
       ),
       body: Center(
       ), // This trailing comma makes auto-formatting nicer for build methods.
