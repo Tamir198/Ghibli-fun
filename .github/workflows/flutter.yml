@@ -4,7 +4,7 @@ name: Flutter CI
 
 on:
   pull_request:
-    branches:
+   # branches:
    # - main
     
 # on: push    # Default will running for every branch.
