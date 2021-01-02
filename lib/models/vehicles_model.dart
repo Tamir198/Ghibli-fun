@@ -7,5 +7,4 @@ class VehiclesModel{
         this.vehicle_class,
         this.length
       });
-
 }
