@@ -13,15 +13,14 @@ class GhibliFilms {
         'https://ghibliapi.herokuapp.com/films',
         headers: {'Content-Type': 'application/json'});
 
-    var jsonLIst = json.decode(response.body) as List;
-
+    List<dynamic> jsonLIst = json.decode(response.body) as List;
     jsonLIst.forEach((value) async {
       films.add(Film(
-        title: value['title'],
-        description: value['description'],
-        director: value['director'],
-        producer: value['producer'],
-        releaseDate: value['release_date'],
+        title: value['title'].toString(),
+        description: value['description'].toString(),
+        director: value['director'].toString(),
+        producer: value['producer'].toString(),
+        releaseDate: value['release_date'].toString(),
       ));
     });
 

@@ -7,7 +7,7 @@ import '../models/film_model.dart';
 
 class FilmWidget extends StatelessWidget {
   Film filmData;
-  FilmWidget({@required this.filmData});
+  FilmWidget(this.filmData);
 
   @override
   Widget build(BuildContext context) {

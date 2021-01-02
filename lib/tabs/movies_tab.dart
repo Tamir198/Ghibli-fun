@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ghinbli_app/models/film_model.dart';
 import 'package:ghinbli_app/network/ghibli_films.dart';
 import 'package:ghinbli_app/widgets/FilmWidget.dart';
 
@@ -15,17 +16,24 @@ class _MoviesTabState extends State<MoviesTab> {
     return
       FutureBuilder(
           future: GhibliFilms().getFilms(),
-          builder: (context, AsyncSnapshot snapshot) {
+          builder: (context, AsyncSnapshot<List<Film>> snapshot) {
             if (!snapshot.hasData) {
               return Center(child: CircularProgressIndicator());
             } else {
               return Center(child: ListView.builder(
-                  itemCount: snapshot.data.length,
+                  itemCount: snapshot.data?.length,
                   itemBuilder: (BuildContext context, int index) {
                     //Todo return custom view
-                    return FilmWidget(filmData: snapshot.data[index]);
+                    return FilmWidgetFromSnapshot(snapshot,index);
                   }));
             }
           });
   }
+}
+
+FilmWidget FilmWidgetFromSnapshot(AsyncSnapshot<List<Film>> snapshot, int index){
+  Film snap = snapshot.data[index] as Film;
+  if(snap == null)
+    snap = Film();
+  return FilmWidget(snap);
 }
