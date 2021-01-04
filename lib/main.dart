@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ghinbli_app/tabs/movies_tab.dart';
+import 'package:ghinbli_app/tabs/vehicles_tab.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,10 +20,10 @@ class MyApp extends StatelessWidget {
         length: 3,
         child: Scaffold(
           appBar: AppBar(
-            bottom: TabBar(
+            bottom: const TabBar(
               tabs: [
                 Tab(icon: Icon(Icons.list)),
-                Tab(icon: Icon(Icons.info)),
+                Tab(icon: Icon(Icons.car_repair)),
                 Tab(icon: Icon(Icons.person)),
               ],
             ),
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
           body: TabBarView(
             children: [
               MoviesTab(),
-              Icon(Icons.directions_transit),
+              VehiclesTab(),
               Icon(Icons.directions_bike),
             ],
           ),
