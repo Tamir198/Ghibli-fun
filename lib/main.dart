@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ghinbli_app/tabs/movies_tab.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,33 +10,33 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Ghibli facts',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+        title: 'Ghibli facts',
+        theme: ThemeData(
+          brightness: Brightness.light,
+          primarySwatch: Colors.blue,
+        ),
+      home: DefaultTabController(
+        length: 3,
+        child: Scaffold(
+          appBar: AppBar(
+            bottom: TabBar(
+              tabs: [
+                Tab(icon: Icon(Icons.list)),
+                Tab(icon: Icon(Icons.info)),
+                Tab(icon: Icon(Icons.person)),
+              ],
+            ),
+            title: Text('Tabs Demo'),
+          ),
+          body: TabBarView(
+            children: [
+              MoviesTab(),
+              Icon(Icons.directions_transit),
+              Icon(Icons.directions_bike),
+            ],
+          ),
+        ),
       ),
-      home: MyHomePage(title: 'Ghibli facts'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(widget.title, textAlign: TextAlign.center,),
-      ),
-      body: Center(
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
