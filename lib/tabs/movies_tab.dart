@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:ghinbli_app/models/film_model.dart';
 import 'package:ghinbli_app/network/ghibli_films.dart';
+import 'package:ghinbli_app/providers/movie_provider.dart';
 import 'package:ghinbli_app/widgets/FilmWidget.dart';
+import 'package:provider/provider.dart';
 
 class MoviesTab extends StatelessWidget {
+  //Provider provider = Provider.of(context)
 
   @override
   Widget build(BuildContext context) {
     //Todo - use provider package to get the data one
     return
       FutureBuilder(
-          future: GhibliFilms().getFilms(),
+          //future: GhibliFilms().getFilms(),
+          future: Provider.of<FilmsProvider>(context, listen: false).films,
           builder: (context, AsyncSnapshot<List<Film>> snapshot) {
             if (!snapshot.hasData) {
               return const Center(child: CircularProgressIndicator());
