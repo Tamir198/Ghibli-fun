@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+
 import 'package:ghinbli_app/models/vehicles_model.dart';
-import 'package:ghinbli_app/network/ghibli_vehicles.dart';
+import 'package:ghinbli_app/providers/vehicles_providret.dart';
 import 'package:ghinbli_app/widgets/VehicleWidget.dart';
+import 'package:provider/provider.dart';
 
 class VehiclesTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: GhibliVehicles().getVehicles(),
+      future: Provider.of<VehiclesProvider>(context, listen: false).vehicles,
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
         if (!snapshot.hasData) {
           return const Center(child: CircularProgressIndicator());

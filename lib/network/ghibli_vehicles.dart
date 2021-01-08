@@ -7,7 +7,7 @@ class GhibliVehicles{
 
   List<VehiclesModel> vehicles = [];
 
-  Future getVehicles()async{
+  Future<List<VehiclesModel>> getVehicles()async{
     final response = await http.get(
         'https://ghibliapi.herokuapp.com/vehicles',
         headers: {'Content-Type': 'application/json'});

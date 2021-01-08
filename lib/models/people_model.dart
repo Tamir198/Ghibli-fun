@@ -1,5 +1,5 @@
 class PeopleModel{
-  final String name,gender,age,eye_color,hair_color,species;
+  final String name,gender,age,eye_color,hair_color;
 
   PeopleModel(
       {this.name,
@@ -7,7 +7,6 @@ class PeopleModel{
         this.age,
         this.eye_color,
         this.hair_color,
-        this.species
       });
 
 
