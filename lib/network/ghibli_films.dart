@@ -4,9 +4,9 @@ import 'package:http/http.dart' as http;
 import '../models/film_model.dart';
 
 class GhibliFilms {
-  List<Film> films = [];
+  List<FilmModel> films = [];
 
-  Future<List<Film>> getFilms() async {
+  Future<List<FilmModel>> getFilms() async {
 
     final response = await http.get(
         'https://ghibliapi.herokuapp.com/films',
@@ -15,7 +15,7 @@ class GhibliFilms {
     List<dynamic> jsonLIst = json.decode(response.body) as List;
 
       jsonLIst.forEach((value) async {
-      films.add(Film(
+      films.add(FilmModel(
         title: value['title'].toString(),
         description: value['description'].toString(),
         director: value['director'].toString(),

@@ -15,14 +15,14 @@ class MoviesTab extends StatelessWidget {
       FutureBuilder(
           //future: GhibliFilms().getFilms(),
           future: Provider.of<FilmsProvider>(context, listen: false).films,
-          builder: (context, AsyncSnapshot<List<Film>> snapshot) {
+          builder: (context, AsyncSnapshot<List<FilmModel>> snapshot) {
             if (!snapshot.hasData) {
               return const Center(child: CircularProgressIndicator());
             } else {
               return Center(child: ListView.builder(
                   itemCount: snapshot.data?.length,
                   itemBuilder: (BuildContext context, int index) {
-                    return FilmWidgetFromSnapshot(snapshot,index);
+                    return movieWidgetFromSnapshot(snapshot,index);
                   }));
             }
           });
@@ -30,8 +30,8 @@ class MoviesTab extends StatelessWidget {
 }
 
 // ignore: lines_longer_than_80_chars, non_constant_identifier_names
-FilmWidget FilmWidgetFromSnapshot(AsyncSnapshot<List<Film>> snapshot, int index){
-  Film snap = snapshot.data[index];
-  snap ??= Film();
+FilmWidget movieWidgetFromSnapshot(AsyncSnapshot<List<FilmModel>> snapshot, int index){
+  FilmModel snap = snapshot.data[index];
+  snap ??= FilmModel();
   return FilmWidget(snap);
 }

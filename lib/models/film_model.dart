@@ -1,7 +1,7 @@
-class Film{
+class FilmModel{
   final String title,description,director,producer,releaseDate;
 
-  Film(
+  FilmModel(
       {this.title,
         this.description,
         this.director,

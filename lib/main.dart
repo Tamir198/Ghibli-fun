@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ghinbli_app/providers/peoples_provider.dart';
 import 'package:ghinbli_app/providers/vehicles_providret.dart';
+import 'package:ghinbli_app/tabs/peoples_tab.dart';
 import 'package:provider/provider.dart';
 
 
@@ -19,6 +21,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (context) => FilmsProvider()),
         ChangeNotifierProvider(create: (context) => VehiclesProvider()),
+        ChangeNotifierProvider(create: (context) => PeoplesProvider()),
       ],
       child: MaterialApp(
           title: 'Ghibli facts',
@@ -39,13 +42,14 @@ class MyApp extends StatelessWidget {
                   Tab(icon: Icon(Icons.person)),
                 ],
               ),
-              title: Text('Tabs Demo'),
+              title: const Text('Ghibli fun'),
             ),
             body: TabBarView(
               children: [
                 MoviesTab(),
                 VehiclesTab(),
-                const Icon(Icons.directions_bike),
+                //Todo check why data is not getting loaded
+                PeopleTab(),
                 const Icon(Icons.directions_bike),
                 const Icon(Icons.directions_bike),
               ],

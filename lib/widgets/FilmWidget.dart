@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import '../models/film_model.dart';
 
 class FilmWidget extends StatelessWidget {
-  Film filmData;
+  FilmModel filmData;
   FilmWidget(this.filmData);
 
   @override
