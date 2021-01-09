@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ghinbli_app/models/film_model.dart';
 import 'package:ghinbli_app/network/ghibli_films.dart';
 import 'package:ghinbli_app/providers/movie_provider.dart';
-import 'package:ghinbli_app/widgets/FilmWidget.dart';
+import 'package:ghinbli_app/widgets/film_widget.dart';
 import 'package:provider/provider.dart';
 
 class MoviesTab extends StatelessWidget {
@@ -10,7 +10,6 @@ class MoviesTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //Todo - use provider package to get the data one
     return
       FutureBuilder(
           //future: GhibliFilms().getFilms(),

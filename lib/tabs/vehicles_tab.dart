@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:ghinbli_app/models/vehicles_model.dart';
 import 'package:ghinbli_app/providers/vehicles_providret.dart';
-import 'package:ghinbli_app/widgets/VehicleWidget.dart';
+import 'package:ghinbli_app/widgets/vehicle_widget.dart';
 import 'package:provider/provider.dart';
 
 class VehiclesTab extends StatelessWidget {

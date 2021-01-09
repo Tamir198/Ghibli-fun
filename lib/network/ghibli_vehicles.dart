@@ -3,13 +3,11 @@ import 'package:http/http.dart' as http;
 
 import '../models/vehicles_model.dart';
 
-class GhibliVehicles{
-
+class GhibliVehicles {
   List<VehiclesModel> vehicles = [];
 
-  Future<List<VehiclesModel>> getVehicles()async{
-    final response = await http.get(
-        'https://ghibliapi.herokuapp.com/vehicles',
+  Future<List<VehiclesModel>> getVehicles() async {
+    final response = await http.get('https://ghibliapi.herokuapp.com/vehicles',
         headers: {'Content-Type': 'application/json'});
 
     List<dynamic> jsonLIst = json.decode(response.body) as List;
