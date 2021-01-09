@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:ghinbli_app/providers/locatios_provider.dart';
 import 'package:ghinbli_app/providers/peoples_provider.dart';
+import 'package:ghinbli_app/providers/species_provider.dart';
 import 'package:ghinbli_app/providers/vehicles_providret.dart';
+import 'package:ghinbli_app/tabs/locations_tab.dart';
 import 'package:ghinbli_app/tabs/peoples_tab.dart';
+import 'package:ghinbli_app/tabs/species_tab.dart';
 import 'package:provider/provider.dart';
 
 
@@ -22,6 +26,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => FilmsProvider()),
         ChangeNotifierProvider(create: (context) => VehiclesProvider()),
         ChangeNotifierProvider(create: (context) => PeoplesProvider()),
+        ChangeNotifierProvider(create: (context) => LocationProvider()),
+        ChangeNotifierProvider(create: (context) => SpeciesProvider()),
       ],
       child: MaterialApp(
           title: 'Ghibli facts',
@@ -38,8 +44,8 @@ class MyApp extends StatelessWidget {
                   Tab(icon: Icon(Icons.list)),
                   Tab(icon: Icon(Icons.car_repair)),
                   Tab(icon: Icon(Icons.person)),
-                  Tab(icon: Icon(Icons.person)),
-                  Tab(icon: Icon(Icons.person)),
+                  Tab(icon: Icon(Icons.location_on)),
+                  Tab(icon: Icon(Icons.more)),
                 ],
               ),
               title: const Text('Ghibli fun'),
@@ -48,10 +54,9 @@ class MyApp extends StatelessWidget {
               children: [
                 MoviesTab(),
                 VehiclesTab(),
-                //Todo check why data is not getting loaded
                 PeopleTab(),
-                const Icon(Icons.directions_bike),
-                const Icon(Icons.directions_bike),
+                LocationsTab(),
+                SpeciesTab(),
               ],
             ),
           ),

@@ -15,12 +15,10 @@ class GhibliPeople{
     List<dynamic> jsonLIst = json.decode(response.body) as List;
 
     for(final person in jsonLIst){
-      //print(person['name']);
       peopleList.add(PeopleModel(
         name: person['name'].toString(),
         gender: person['gender'].toString(),
-        age: person['age'].toString(),
-        hair_color: person['hair_color'].toString(),
+        age: person['age'].toString(), hair_color: person['hair_color'].toString(),
         eye_color: person['eye_color'].toString(),
       ));
     }
