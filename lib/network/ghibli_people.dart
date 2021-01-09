@@ -19,8 +19,7 @@ class GhibliPeople{
       peopleList.add(PeopleModel(
         name: person['name'].toString(),
         gender: person['gender'].toString(),
-        age: person['age'].toString(),
-        hair_color: person['hair_color'].toString(),
+        age: person['age'].toString(), hair_color: person['hair_color'].toString(),
         eye_color: person['eye_color'].toString(),
       ));
     }
