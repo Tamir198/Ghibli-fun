@@ -1,4 +1,4 @@
-
+Simple app giving you information about ghibli studio.
 
 <p float="left">
 
